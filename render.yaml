@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: blog-management-system
+    env: java
+    buildCommand: mvn clean install -DskipTests
+    startCommand: java -jar target/blog-management-system-1.0.0.jar
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: DB_USERNAME
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: PORT
+        value: 8080
