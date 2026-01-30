@@ -1,0 +1,172 @@
+{
+  "info": {
+    "name": "Blog Management System API",
+    "description": "Complete API collection for Blog Management System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8080",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Get All Blogs",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/blogs",
+          "host": ["{{base_url}}"],
+          "path": ["api", "blogs"]
+        }
+      }
+    },
+    {
+      "name": "Get Blog by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/blogs/1",
+          "host": ["{{base_url}}"],
+          "path": ["api", "blogs", "1"]
+        }
+      }
+    },
+    {
+      "name": "Get Published Blogs",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/blogs/published",
+          "host": ["{{base_url}}"],
+          "path": ["api", "blogs", "published"]
+        }
+      }
+    },
+    {
+      "name": "Search by Title",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/blogs/search/title?title=Spring",
+          "host": ["{{base_url}}"],
+          "path": ["api", "blogs", "search", "title"],
+          "query": [
+            {
+              "key": "title",
+              "value": "Spring"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Search by Author",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/blogs/search/author?author=Rahul",
+          "host": ["{{base_url}}"],
+          "path": ["api", "blogs", "search", "author"],
+          "query": [
+            {
+              "key": "author",
+              "value": "Rahul"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Search by Category",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/blogs/search/category?category=Technology",
+          "host": ["{{base_url}}"],
+          "path": ["api", "blogs", "search", "category"],
+          "query": [
+            {
+              "key": "category",
+              "value": "Technology"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Blog",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Getting Started with Spring Boot\",\n  \"content\": \"Spring Boot makes it easy to create stand-alone, production-grade Spring based Applications that you can just run.\",\n  \"author\": \"Rahul Mishra\",\n  \"category\": \"Technology\",\n  \"tags\": \"spring-boot, java, backend\",\n  \"published\": true\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/blogs",
+          "host": ["{{base_url}}"],
+          "path": ["api", "blogs"]
+        }
+      }
+    },
+    {
+      "name": "Update Blog",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Getting Started with Spring Boot - Updated\",\n  \"content\": \"Updated content about Spring Boot...\",\n  \"author\": \"Rahul Mishra\",\n  \"category\": \"Technology\",\n  \"tags\": \"spring-boot, java, backend, updated\",\n  \"published\": true\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/blogs/1",
+          "host": ["{{base_url}}"],
+          "path": ["api", "blogs", "1"]
+        }
+      }
+    },
+    {
+      "name": "Delete Blog",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/blogs/1",
+          "host": ["{{base_url}}"],
+          "path": ["api", "blogs", "1"]
+        }
+      }
+    },
+    {
+      "name": "Delete All Blogs",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/blogs",
+          "host": ["{{base_url}}"],
+          "path": ["api", "blogs"]
+        }
+      }
+    }
+  ]
+}
